@@ -11,11 +11,11 @@ destination_location = "C:/Users/13605/Desktop/DL_Docs"
 
 
 def move_file(file, location):
-    """
-    Moves a file from one location to another.
+    """Moves a file from one location to another
 
-    :param file: File to be moved
-    :param location: Location for file to be moved to
+    Args:
+        file (string): File to be moved
+        location (string): Location for file to be moved to
     """
     try:
         shutil.move(source_file, destination_location)

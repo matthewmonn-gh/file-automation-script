@@ -7,7 +7,7 @@ source_directory = Path("C:/Users/13605/Downloads/")
 destination_directory = Path("C:/Users/13605/Desktop/DL_Docs/")
 
 
-def check_directory_is_valid(directory):
+def check_directory_is_valid(directory: Path):
     """Checks if a directory exists or not
 
     Args:
@@ -16,10 +16,14 @@ def check_directory_is_valid(directory):
     Returns:
         boolean: Provides True or False if directory exists
     """
-    if directory.is_dir():
+    if str(directory) == '.':
+        print("Error: An empty directory was provided")
+        return False
+    elif directory.is_dir():
         return True
     else:
-        print("Directory of where the file is to be moved does not exist. Please create the directory first, then try again.")
+        # print("Directory of where the file is to be moved does not exist. Please create the directory first, then try again.")
+        print(f"Error: Directory {directory} does not exist.")
         return False
 
 
